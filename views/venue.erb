@@ -1,0 +1,25 @@
+<h1> Dale's Delightful band and tour tracker </h1>
+
+
+
+<h2> Here is the list of venues to choose from : </h2>
+<% if @venues.any? %>
+  <% @venues.each() do |venue| %>
+  <ul>
+    <li>"/venues/<%= venue.id() %>"><%= venue.name() %> </li>
+  </ul>
+  <% end %>
+<% else %>
+  No bands have been added yet.
+<% end %>
+
+
+
+
+<h2> List the name of a venue </h2>
+
+<form action="/venues" method="post">
+  <label for="venue_name"> Name of the venue </label>
+  <input type="text" name="venue_name" id="venue_name" placeholder="CBGY's"
+  <button class="button" type="submit"> Add the venue! </button>
+</form>

@@ -6,15 +6,12 @@
 <% if @bands.any? %>
   <% @bands.each() do |band| %>
   <ul>
-    <li><a href= "/venues/<%= band.id() %>"><%= band.name() %></a></li>
+    <li><a href= "/venues/<%= band.id() %>"><%= band.name() %></a> <p><a href="/bands/<%= band.id() %>/edit"> Edit the entry for<%= band.name() %></a></li>
   </ul>
   <% end %>
 <% else %>
   No bands have been added yet.
 <% end %>
-
-
-
 
 <h2> List a band you've seen live! </h2>
 

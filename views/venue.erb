@@ -1,25 +1,36 @@
 <h1> Dale's Delightful band and tour tracker </h1>
 
-
+<h2> Add venues where <%= @band.name() %> has played </h2>
 
 <h2> Here is the list of venues to choose from : </h2>
 <% if @venues.any? %>
-  <% @venues.each() do |venue| %>
-  <ul>
-    <li>"/venues/<%= venue.id() %>"><%= venue.name() %> </li>
-  </ul>
+<% @venues.each() do |venue| %>
+<form action="/bands_venue_add" method="post">
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" id="venue_ids_array[]" name="venue_ids_array[]" value="<%= venue.id() %>">
+      <li><p "/venues/<%= venue.id %>"> <%= venue.name() %></a></li>
+      </label>
+    </div>
+    <% end %>
+    <button type="submit" class="btn btn-warning"> Add the venues to this band</button>
+  </form>
+
+
+  <% else %>
+
+
+
+  No venues have been added yet.
   <% end %>
-<% else %>
-  No bands have been added yet.
-<% end %>
 
 
 
 
-<h2> List the name of a venue </h2>
+  <h2> List the name of a venue </h2>
 
-<form action="/venues" method="post">
-  <label for="venue_name"> Name of the venue </label>
-  <input type="text" name="venue_name" id="venue_name" placeholder="CBGY's"
-  <button class="button" type="submit"> Add the venue! </button>
-</form>
+  <form action="/venues" method="post">
+    <label for="venue_name"> Name of the venue </label>
+    <input type="text" name="venue_name" id="venue_name" placeholder="CBGY's">
+    <button class="button" type="submit"> Add the venue! </button>
+  </form>

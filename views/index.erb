@@ -4,19 +4,19 @@
 
 <h2> Here is the list of bands to choose from : </h2>
 <% if @bands.any? %>
-  <% @bands.each() do |band| %>
-  <ul>
-    <li><a href= "/venues/<%= band.id() %>"><%= band.name() %></a> <p><a href="/bands/<%= band.id() %>/edit"> Edit the entry for<%= band.name() %></a></li>
+<% @bands.each() do |band| %>
+<ul>
+  <li><a href= "/venues/<%= band.id() %>"><%= band.name() %></a> <p><a href="/bands/<%= band.id() %>/edit"> Edit the entry for <%= band.name() %></a></li>
   </ul>
   <% end %>
-<% else %>
+  <% else %>
   No bands have been added yet.
-<% end %>
+  <% end %>
 
-<h2> List a band you've seen live! </h2>
+  <h2> List a band you've seen live! </h2>
 
-<form action="/bands" method="post">
-  <label for="band_name"> Band's name? </label>
-  <input type="text" style="background:#000000;" name="band_name" id="band_name" placeholder="Rancid">
-  <button class="btn btn-success" type="submit"> Add the band! </button>
-</form>
+  <form action="/bands" method="post">
+    <label for="band_name"> Band's name? </label>
+    <input type="text" style="background:#000000;" name="band_name" id="band_name" placeholder="Rancid">
+    <button class="btn btn-success" type="submit"> Add the band! </button>
+  </form>

@@ -1,0 +1,11 @@
+body {
+  background-image: url("http://www.lightheadedbeds.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/3/0/30079-00-tsk__band_practice_1600px_1.jpg");
+  background-color: black;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  color: #C7E8ED;
+  text-decoration: underline;
+}
+li {
+  color: white;
+}

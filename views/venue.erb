@@ -9,6 +9,7 @@
   <div class="checkbox">
     <label>
       <input type="checkbox" id="venue_ids_array[]" name="venue_ids_array[]" value="<%= venue.id() %>">
+      <input type="hidden" id="band_id" name="band_id" value="<%= @band.id() %>">
       <li><p "/venues/<%= venue.id %>"> <%= venue.name() %></a></li>
       </label>
     </div>

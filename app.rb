@@ -44,6 +44,7 @@ get('/venues/:id') do
   band_id = Band.find(params.fetch("id").to_i())
   @band = Band.find(band_id)
   @venues = Venue.all()
+  @band_venues = @band.venues()
   erb(:venue)
 end
 

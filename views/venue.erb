@@ -1,6 +1,7 @@
 <h1> Dale's Delightful band and tour tracker </h1>
 
 <h2> Add venues where <%= @band.name() %> has played </h2>
+<h3> Where they have already played </h3>
 <% if @band_venues.any? %>
 <% @band_venues.each() do |band_venue| %>
   <li><%= band_venue.name() %> </a></li>

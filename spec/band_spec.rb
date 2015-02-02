@@ -14,3 +14,7 @@ describe(Band) do
     expect(band.name()).to(eq("Rancid"))
   end
 end
+
+describe(Band) do
+  it { should have_and_belong_to_many(:venues) }
+end

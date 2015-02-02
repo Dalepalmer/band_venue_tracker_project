@@ -4,10 +4,6 @@ class Band < ActiveRecord::Base
   before_save(:titleize_name)
 
 
-  scope(:not_done, -> do
-    where({:done => false})
-  end)
-
   private
 
   define_method(:titleize_name) do

@@ -13,3 +13,17 @@ describe(Venue) do
     expect(venue.name()).to(eq("Beachland Ballroom"))
   end
 end
+
+describe(Venue) do
+  it { should have_and_belong_to_many(:bands) }
+end
+
+describe(".not_played") do
+  it("returns the not played venues") do
+    not_played_venue1 = Venue.create({:name => "The Holoscene", :played => false})
+    not_played_venue2 = Venue.create({:name => "Mississippi Studios", :played => false})
+    not_played_venues = [not_played_venue1, not_played_venue2]
+    played_venue = Venue.create({:name => "The Hilt", :played => true})
+    expect(Venue.not_played()).to(eq(not_played_venues))
+  end
+end

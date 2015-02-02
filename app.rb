@@ -50,7 +50,7 @@ end
 
 post('/venues') do
   name = params.fetch("venue_name")
-  Venue.create({:name => name})
+  Venue.create({:name => name, :played => false})
   redirect back
 end
 

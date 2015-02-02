@@ -3,10 +3,9 @@ class Venue < ActiveRecord::Base
   validates(:name, :presence => true)
   before_create(:titleize_name)
 
-  scope(:not_done, -> do
-    where({:done => false})
+  scope(:not_played, -> do
+    where({:played => false})
   end)
-
 
   private
 

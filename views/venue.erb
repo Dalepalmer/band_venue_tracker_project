@@ -10,6 +10,17 @@
 
   No venues have been added to <%= @band.name() %>'s record yet </h2>
   <% end %>
+<br>
+</br>
+
+
+<p>Here are venues this band has not played yet:</p>
+
+<ul>
+  <% @venues.not_played().each do |venue| %>
+    <li><%= venue.name %></li>
+  <% end %>
+</ul>
 
 <h2> Here is the list of venues to choose from : </h2>
 <% if @venues.any? %>
